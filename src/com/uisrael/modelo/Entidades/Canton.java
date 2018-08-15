@@ -5,11 +5,13 @@
  */
 package com.uisrael.modelo.Entidades;
 
+import java.io.Serializable;
+
 /**
  *
  * @author PC
  */
-public class Canton {
+public class Canton implements  Serializable{
     
     private int idcanton;
     private String canton;

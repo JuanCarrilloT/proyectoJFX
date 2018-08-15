@@ -5,11 +5,13 @@
  */
 package com.uisrael.modelo.Entidades;
 
+import java.io.Serializable;
+
 /**
  *
  * @author PC
  */
-public class Provincia {
+public class Provincia implements Serializable{
     private int idprovincia;
     private String provincia;
     private boolean estado;

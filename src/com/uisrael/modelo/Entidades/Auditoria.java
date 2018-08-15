@@ -5,13 +5,14 @@
  */
 package com.uisrael.modelo.Entidades;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
  *
  * @author PC
  */
-public class Auditoria {
+public class Auditoria implements  Serializable{
     
     private int idaud; 
     private String nombreTabla;

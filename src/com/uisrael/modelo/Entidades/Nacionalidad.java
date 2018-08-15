@@ -5,11 +5,13 @@
  */
 package com.uisrael.modelo.Entidades;
 
+import java.io.Serializable;
+
 /**
  *
  * @author PC
  */
-public class Nacionalidad {
+public class Nacionalidad implements Serializable{
     private int idnacionalidad;
     private String nacionalidad;
     private String pais;
