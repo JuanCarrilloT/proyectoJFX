@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="380.0" prefWidth="871.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="estudiante.view.DetalleHistoriaCliController">
+   <children>
+      <Pane layoutX="11.0" layoutY="14.0" prefHeight="67.0" prefWidth="848.0" style="-fx-background-color: #fff;">
+         <children>
+            <Label layoutX="2.0" layoutY="-4.0" text="Paciente" underline="true">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <JFXTextField alignment="CENTER" editable="false" layoutX="125.0" layoutY="10.0" prefHeight="25.0" prefWidth="90.0" promptText="ID" style="-fx-background-color: #fff;" />
+            <Label layoutX="128.0" layoutY="40.0" text="Historia Clinica">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Label>
+            <JFXTextField alignment="CENTER" editable="false" layoutX="251.0" layoutY="10.0" prefHeight="25.0" prefWidth="279.0" promptText="Nombre Apellido" style="-fx-background-color: #fff;" />
+            <Label layoutX="340.0" layoutY="40.0" text="Nombres y Apellidos">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Label>
+            <JFXTextField alignment="CENTER" editable="false" layoutX="575.0" layoutY="10.0" prefHeight="25.0" prefWidth="90.0" promptText="Edad" style="-fx-background-color: #fff;" />
+            <Label layoutX="608.0" layoutY="40.0" text="Edad">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Label>
+            <JFXButton layoutX="735.0" layoutY="11.0" text="Salir" />
+         </children>
+      </Pane>
+      <Pane layoutX="13.0" layoutY="89.0" prefHeight="285.0" prefWidth="848.0" style="-fx-background-color: #fff;">
+         <children>
+            <Label style="-fx-background-color: #fff;" text="Cita Medica" underline="true">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <JFXTextArea editable="false" layoutX="26.0" layoutY="53.0" prefHeight="76.0" prefWidth="236.0" style="-fx-background-color: #ffffff;" />
+            <JFXTextArea editable="false" layoutX="300.0" layoutY="53.0" prefHeight="76.0" prefWidth="236.0" style="-fx-background-color: #ffffff;" />
+            <JFXTextArea editable="false" layoutX="583.0" layoutY="53.0" prefHeight="76.0" prefWidth="236.0" style="-fx-background-color: #ffffff;" />
+            <Label layoutX="98.0" layoutY="138.0" text="Tratamiento">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="391.0" layoutY="138.0" text="Exámenes">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="652.0" layoutY="138.0" text="Medicamentos">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Label>
+            <JFXTextArea editable="false" layoutX="23.0" layoutY="155.0" prefHeight="94.0" prefWidth="796.0" />
+            <Label layoutX="368.0" layoutY="261.0" text="Observaciones">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Label>
+            <JFXTextField alignment="CENTER" editable="false" layoutX="134.0" layoutY="5.0" promptText="Referencia" />
+            <Label layoutX="165.0" layoutY="34.0" text="Referencia">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Label>
+            <JFXTextField alignment="CENTER" editable="false" layoutX="315.0" layoutY="5.0" promptText="Fecha" />
+            <Label layoutX="365.0" layoutY="34.0" text="Fecha">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Label>
+            <JFXTextField alignment="CENTER" editable="false" layoutX="490.0" layoutY="5.0" promptText="Médico" />
+            <Label layoutX="538.0" layoutY="34.0" text="Médico">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Label>
+            <JFXTextField alignment="CENTER" editable="false" layoutX="676.0" layoutY="5.0" promptText="Diagnóstico" />
+            <Label layoutX="712.0" layoutY="34.0" text="Diagnóstico">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

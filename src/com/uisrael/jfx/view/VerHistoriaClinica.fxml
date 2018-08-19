@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="494.0" prefWidth="1108.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="estudiante.view.HistoriaClinicaController">
+   <children>
+      <Pane layoutX="22.0" layoutY="14.0" prefHeight="347.0" prefWidth="659.0">
+         <children>
+            <Label fx:id="jlDatosPersonales" layoutX="10.0" layoutY="9.0" text="Datos Personales" underline="true">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Text layoutX="47.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Identificación">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Text>
+            <JFXTextField alignment="CENTER" layoutX="19.0" layoutY="46.0" promptText="Identificación" />
+            <JFXTextField alignment="CENTER" layoutX="174.0" layoutY="47.0" promptText="Nombres" />
+            <JFXTextField alignment="CENTER" layoutX="327.0" layoutY="48.0" promptText="Apellidos" />
+            <JFXTextField alignment="CENTER" layoutX="484.0" layoutY="49.0" promptText="Teléfono" />
+            <Text layoutX="217.0" layoutY="89.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombres">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Text>
+            <Text layoutX="370.0" layoutY="89.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Apellidos">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Text>
+            <Text layoutX="527.0" layoutY="89.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Teléfono">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Text>
+            <JFXComboBox layoutX="19.0" layoutY="109.0" prefHeight="25.0" prefWidth="135.0" promptText="-- Nacionalidad --" />
+            <Text layoutX="42.0" layoutY="152.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pais Nacimiento">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Text>
+            <JFXTextField alignment="CENTER" layoutX="176.0" layoutY="109.0" prefHeight="25.0" prefWidth="291.0" promptText="Lugar Nacimiento" />
+            <JFXDatePicker layoutX="485.0" layoutY="106.0" promptText="Fecha Nacimiento" />
+            <Text layoutX="274.0" layoutY="152.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lugar Nacimiento">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Text>
+            <Text layoutX="486.0" layoutY="152.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fecha Nacimiento">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Text>
+            <JFXComboBox layoutX="19.0" layoutY="167.0" prefHeight="25.0" prefWidth="135.0" promptText="-- Residencia --" />
+            <Text layoutX="55.0" layoutY="210.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Residencia">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Text>
+            <JFXTextField alignment="CENTER" layoutX="176.0" layoutY="167.0" prefHeight="25.0" prefWidth="291.0" promptText="Lugar Residencia" />
+            <Text layoutX="274.0" layoutY="210.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lugar Residencia">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Text>
+            <JFXTextField alignment="CENTER" layoutX="486.0" layoutY="167.0" promptText="Celular" />
+            <Text layoutX="534.0" layoutY="207.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Celular">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Text>
+            <Label fx:id="jlDatosPersonales1" layoutX="10.0" layoutY="220.0" text="Referencia Personal" underline="true">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <JFXComboBox layoutX="19.0" layoutY="256.0" prefHeight="25.0" prefWidth="135.0" promptText="-- Parentezco --" />
+            <Text layoutX="53.0" layoutY="299.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Parentezco">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Text>
+            <JFXTextField alignment="CENTER" layoutX="176.0" layoutY="256.0" prefHeight="25.0" prefWidth="291.0" promptText="Nombres y Apellidos" />
+            <Text layoutX="266.0" layoutY="299.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombres y Apellidos">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Text>
+            <JFXTextField alignment="CENTER" layoutX="486.0" layoutY="256.0" promptText="Teléfono" />
+            <Text layoutX="530.0" layoutY="296.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Teléfono">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Text>
+            <Separator layoutX="662.0" layoutY="25.0" orientation="VERTICAL" prefHeight="399.0" prefWidth="17.0" />
+            <Label fx:id="jlDatosPersonales2" layoutX="677.0" layoutY="8.0" text="Datos Médicos" underline="true">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Text layoutX="848.0" layoutY="192.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Alergias">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Text>
+            <JFXComboBox layoutX="912.0" layoutY="12.0" prefHeight="25.0" prefWidth="135.0" promptText="-- Tipo Sangre --" />
+            <Text layoutX="942.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tipo Sangre">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <JFXTextArea layoutX="704.0" layoutY="92.0" prefHeight="88.0" prefWidth="391.0" promptText="Alergias" />
+      <Text layoutX="857.0" layoutY="335.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Antecedentes">
+         <font>
+            <Font name="Arial" size="12.0" />
+         </font>
+      </Text>
+      <JFXTextArea layoutX="705.0" layoutY="220.0" prefHeight="88.0" prefWidth="391.0" promptText="Antecedentes" />
+      <Text layoutX="854.0" layoutY="462.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Discapacidades">
+         <font>
+            <Font name="Arial" size="12.0" />
+         </font>
+      </Text>
+      <JFXTextArea layoutX="705.0" layoutY="347.0" prefHeight="88.0" prefWidth="391.0" promptText="Discapacidades" />
+   </children>
+</AnchorPane>

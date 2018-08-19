@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="205.0" prefWidth="542.0" style="-fx-background-color: #fff;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="estudiante.view.AsignarTurnoController">
+   <children>
+      <JFXTextField alignment="CENTER" editable="false" layoutX="37.0" layoutY="20.0" prefHeight="25.0" prefWidth="152.0" promptText="Historia Clinica" />
+      <Label layoutX="73.0" layoutY="51.0" text="Historia Clínica">
+         <font>
+            <Font name="Arial" size="12.0" />
+         </font>
+      </Label>
+      <JFXComboBox layoutX="37.0" layoutY="95.0" prefHeight="25.0" prefWidth="227.0" promptText="-- Especialidad --" />
+      <Label layoutX="100.0" layoutY="125.0" text="Especialidad">
+         <font>
+            <Font name="Arial" size="12.0" />
+         </font>
+      </Label>
+      <JFXComboBox layoutX="282.0" layoutY="95.0" prefHeight="25.0" prefWidth="240.0" promptText="-- Médico --" />
+      <Label layoutX="378.0" layoutY="125.0" text="Médico">
+         <font>
+            <Font name="Arial" size="12.0" />
+         </font>
+      </Label>
+      <JFXButton layoutX="181.0" layoutY="163.0" text="Asignar" />
+      <JFXButton layoutX="286.0" layoutY="163.0" text="Cancelar" />
+   </children>
+</AnchorPane>
