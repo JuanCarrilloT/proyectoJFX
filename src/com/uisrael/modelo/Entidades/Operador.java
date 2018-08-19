@@ -20,9 +20,9 @@ public class Operador implements Serializable{
     private String cargo;
     private String usuario;
     private String password;
-    private String estado;
+    private boolean estado;
 
-    public Operador(int idoperador, String identificacion, String nombre, String apellido, String cargo, String usuario, String password, String estado) {
+    public Operador(int idoperador, String identificacion, String nombre, String apellido, String cargo, String usuario, String password, boolean estado) {
         this.idoperador = idoperador;
         this.identificacion = identificacion;
         this.nombre = nombre;
@@ -92,14 +92,13 @@ public class Operador implements Serializable{
         this.password = password;
     }
 
-    public String getEstado() {
+   public boolean isEstado() {
         return estado;
     }
 
-    public void setEstado(String estado) {
+    public void setEstado(boolean estado) {
         this.estado = estado;
     }
-
     @Override
     public String toString() {
         return "Operador{" + "idoperador=" + idoperador + ", identificacion=" + identificacion + ", nombre=" + nombre + ", apellido=" + apellido + ", cargo=" + cargo + ", usuario=" + usuario + ", password=" + password + ", estado=" + estado + '}';

@@ -16,7 +16,7 @@ import java.util.List;
 
 /**
  *
- * @author PC
+ * @Jccarrillot
  */
 public class CantonDao {
     
@@ -103,41 +103,39 @@ public class CantonDao {
     }
     
     
-    public boolean actualizar(Epdosb epdosb) {
+    public boolean actualizar(Canton canton) {
         Connection connect = null;
         Statement stm = null;
 
         boolean actualizar = false;
 
-        String sql = "UPDATE epdosb SET fechaalta='" + epdosb.getFechaalta() + "', tipoinmueble='" + epdosb.getTipoinmueble()
-                + "', operacion='" + epdosb.getOperacion() + "',provincia='" + epdosb.getProvincia()+ "',superficie=" + epdosb.getSuperficie() + " "
-                + ",preciodeventa=" + epdosb.getPreciodeventa() + ",fechaventa='" + epdosb.getFechaventa() + "',vendedor='" + epdosb.getVendedor() + "' "  + " WHERE referencia=" + epdosb.getReferencia();
-        try {
+        String sql = "UPDATE canton SET canton='" + canton.getCanton()+ "', provincia=" + canton.getProvincia() +" WHERE idcanton=" + canton.getIdcanton();
+    try {
             connect = Conexion.getConexionPostgrest();
             stm = connect.createStatement();
             stm.execute(sql);
             actualizar = true;
         } catch (SQLException e) {
-            System.out.println("Error: Clase EpdosbDAOImpl, método actualizar");
+            System.out.println("Error: Clase CantonDAO, método actualizar");
             e.printStackTrace();
         }
         return actualizar;
     }
 
-    public boolean eliminar(Epdosb epdosb) {
+    public boolean eliminar(Canton canton) {
         Connection connect = null;
         Statement stm = null;
 
         boolean eliminar = false;
 
-        String sql = "DELETE FROM epdosb WHERE referencia=" + epdosb.getReferencia();
+        String sql = "DELETE FROM canton WHERE idcanton=" + canton.getIdcanton();
         try {
             connect = Conexion.getConexionPostgrest();
             stm = connect.createStatement();
             stm.execute(sql);
             eliminar = true;
         } catch (SQLException e) {
-            System.out.println("Error: Clase epdosbDAOImpl, método eliminar");
+            System.out.println("Error: Clase CantonDAO, método eliminar");
             e.printStackTrace();
         }
         return eliminar;
@@ -148,7 +146,7 @@ public class CantonDao {
         Statement stm = null;
         ResultSet rs = null;
         int maximo = 1;
-        String sql = "SELECT max(referencia) FROM epdosb";
+        String sql = "SELECT max(idcanton) FROM canton";
         try {
             connect = Conexion.getConexionPostgrest();
             stm = connect.createStatement();
@@ -157,7 +155,7 @@ public class CantonDao {
                 maximo = rs.getInt(1) + 1;
             }
         } catch (Exception e) {
-            System.out.println("Error: Clase EpdosbDAOImpl, método getMaxID");
+            System.out.println("Error: Clase CantonDAO, método getMaxID");
             e.printStackTrace();
         }
         return maximo;

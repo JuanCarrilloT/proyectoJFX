@@ -18,12 +18,12 @@ public class Medico implements Serializable{
     private String nombre;
     private String apellido;
     private int especialidad;
-    private int estado;
+    private boolean estado;
 
     public Medico() {
     }
 
-    public Medico(String licencia, String identificacion, String nombre, String apellido, int especialidad, int estado) {
+    public Medico(String licencia, String identificacion, String nombre, String apellido, int especialidad, boolean estado) {
         this.licencia = licencia;
         this.identificacion = identificacion;
         this.nombre = nombre;
@@ -72,11 +72,11 @@ public class Medico implements Serializable{
         this.especialidad = especialidad;
     }
 
-    public int getEstado() {
+    public boolean isEstado() {
         return estado;
     }
 
-    public void setEstado(int estado) {
+    public void setEstado(boolean estado) {
         this.estado = estado;
     }
 
