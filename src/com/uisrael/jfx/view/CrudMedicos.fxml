@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="registroMedico" prefHeight="466.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.uisrael.jfx.view.CrudMedicosController">
+   <children>
+      <TableView fx:id="dtTable" layoutY="276.0" prefHeight="192.0" prefWidth="600.0" stylesheets="@../../../../../../JavaFXBD/src/com/uisrael/javfx/view/style.css" />
+      <Label layoutX="41.0" layoutY="26.0" prefHeight="17.0" prefWidth="434.0" text="REGISTRO DE MEDICOS">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="btnguardar" defaultButton="true" layoutX="451.0" layoutY="103.0" onAction="#guardarMedico" prefHeight="25.0" prefWidth="76.0" text="Guardar" />
+      <JFXButton fx:id="btnactualizar" defaultButton="true" layoutX="451.0" layoutY="139.0" onAction="#actualizaMedico" prefHeight="25.0" prefWidth="76.0" text="Actualizar" />
+      <JFXButton fx:id="btncancelar" cancelButton="true" defaultButton="true" layoutX="451.0" layoutY="209.0" prefHeight="25.0" prefWidth="76.0" text="Cancelar" />
+      <JFXButton fx:id="btneliminar" defaultButton="true" layoutX="451.0" layoutY="175.0" onAction="#eliminaMedico" prefHeight="25.0" prefWidth="76.0" text="Eliminar" />
+      <JFXTextField fx:id="txtlicencia" layoutX="41.0" layoutY="66.0" maxWidth="387.0" minWidth="387.0" prefHeight="31.0" prefWidth="387.0" promptText="Licencia" />
+      <JFXTextField fx:id="txtidentificacion" layoutX="41.0" layoutY="100.0" maxWidth="387.0" minWidth="387.0" prefHeight="31.0" prefWidth="387.0" promptText="Identificacion" />
+      <JFXTextField fx:id="txtnombre" layoutX="41.0" layoutY="136.0" maxWidth="387.0" minWidth="379.0" prefHeight="31.0" prefWidth="387.0" promptText="Nombres" />
+      <JFXTextField fx:id="txtapellido" layoutX="41.0" layoutY="172.0" maxWidth="387.0" minWidth="387.0" prefHeight="31.0" prefWidth="387.0" promptText="Apellidos" />
+      <JFXComboBox fx:id="cmbespecialidad" layoutX="47.0" layoutY="209.0" prefHeight="25.0" prefWidth="375.0" promptText="Especialidad" />
+      <MaterialDesignIconView fx:id="cerrarForma" fill="#eeeded" glyphName="CLOSE" layoutX="583.0" layoutY="22.0" onMouseClicked="#closeStage" size="22" />
+   </children>
+</AnchorPane>

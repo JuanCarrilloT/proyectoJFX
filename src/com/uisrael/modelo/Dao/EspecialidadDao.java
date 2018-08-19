@@ -45,7 +45,7 @@ public class EspecialidadDao {
         Statement stm = null;
         ResultSet rs = null;
         String sql = "SELECT * FROM especialidad ORDER BY idesp";
-        List<Especialidad> listaEspecialidad = new ArrayList<Especialidad>();
+        List<Especialidad> listaEspecialidad = new ArrayList<>();
         try {
             co = Conexion.getConexionPostgrest();
             stm = co.createStatement();
@@ -63,7 +63,6 @@ public class EspecialidadDao {
             co.close();
         } catch (SQLException e) {
             System.out.println("Error: Clase EspecialidadDao, método obtener");
-            e.printStackTrace();
         }
 
         return listaEspecialidad;

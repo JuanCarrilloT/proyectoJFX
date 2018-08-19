@@ -27,7 +27,7 @@ public class Conexion {
 
     public static Connection getConexionPostgrest() {
         Connection con = null;
-        String url = "jdbc:postgresql://localhost:5432/prueba2";
+        String url = "jdbc:postgresql://localhost:5432/proyectoFX";
         Properties props = new Properties();
         props.setProperty("user", "postgres");
         props.setProperty("password", "juan1096carlos");

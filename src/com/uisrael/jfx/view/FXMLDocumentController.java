@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package proyectojfx;
+package com.uisrael.jfx.view;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -14,7 +14,7 @@ import javafx.scene.control.Label;
 
 /**
  *
- * @author PC
+ * @author mrperez
  */
 public class FXMLDocumentController implements Initializable {
     
