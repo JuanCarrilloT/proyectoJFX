@@ -25,7 +25,7 @@
       <JFXTextField fx:id="txtidentificacion" layoutX="41.0" layoutY="100.0" maxWidth="387.0" minWidth="387.0" prefHeight="31.0" prefWidth="387.0" promptText="Identificacion" />
       <JFXTextField fx:id="txtnombre" layoutX="41.0" layoutY="136.0" maxWidth="387.0" minWidth="379.0" prefHeight="31.0" prefWidth="387.0" promptText="Nombres" />
       <JFXTextField fx:id="txtapellido" layoutX="41.0" layoutY="172.0" maxWidth="387.0" minWidth="387.0" prefHeight="31.0" prefWidth="387.0" promptText="Apellidos" />
-      <JFXComboBox fx:id="cmbespecialidad" layoutX="47.0" layoutY="209.0" prefHeight="25.0" prefWidth="375.0" promptText="Especialidad" />
+      <JFXComboBox fx:id="cmbespecialidad" layoutX="47.0" layoutY="209.0" prefHeight="25.0" prefWidth="375.0" promptText="Especialidad" stylesheets="@style.css" />
       <MaterialDesignIconView fx:id="cerrarForma" fill="#eeeded" glyphName="CLOSE" layoutX="583.0" layoutY="22.0" onMouseClicked="#closeStage" size="22" />
    </children>
 </AnchorPane>

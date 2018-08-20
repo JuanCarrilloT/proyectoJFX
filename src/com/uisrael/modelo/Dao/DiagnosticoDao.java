@@ -27,7 +27,7 @@ public class DiagnosticoDao {
         Statement stm = null;
         Connection con = null;
         
-        String sql = "INSERT INTO diagnostico (cie, descripcion) values ("+ diagnostico.getCie() + ",'" + diagnostico.getDescripcion() +"')";
+        String sql = "INSERT INTO diagnostico (cie, descripcion) values ('"+ diagnostico.getCie() + "','" + diagnostico.getDescripcion() +"')";
         try {
             con = Conexion.getConexionPostgrest();
             stm = con.createStatement();

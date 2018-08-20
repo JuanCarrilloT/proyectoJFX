@@ -5,8 +5,8 @@
  */
 package com.uisrael.modelo.Dao;
 
-
 import com.uisrael.modelo.Entidades.Especialidad;
+import com.uisrael.modelo.Entidades.Turno;
 import com.uisrael.modelo.conexion.Conexion;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -14,49 +14,60 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Observable;
 import javafx.collections.ObservableList;
 
 /**
  *
  * @author PC
  */
-public class EspecialidadDao {
+public class TurnoDao {
     
-     public boolean registrar(Especialidad especialidad) {
-        boolean registrar = false;
-        Statement stm = null;
-        Connection con = null;
-        
-        String sql = "INSERT INTO especialidad (idesp,especialidad) values ("+ especialidad.getIdesp()+ ",'" + especialidad.getEspecialidad()+"')";
-        try {
-            con = Conexion.getConexionPostgrest();
-            stm = con.createStatement();
-            stm.execute(sql);
-            registrar = true;
-            stm.close();
-            con.close();
-        } catch (SQLException e) {
-            System.out.println("Error: Clase EspecialidadDao, método registrar");
-        }
-        return registrar;
-    }
-
-    public List<Especialidad> obtener() {
+       
+    public boolean registrarTurno (Turno turno ){
+     Connection connect = null;
+     Statement stm = null;
+     ResultSet rs = null;
+      boolean registrar = false;
+     
+     String sql="select * from fn_turno("+turno.getIdturno()+","+turno.getHistoriacl()+",'"+turno.getMedico()+"')";
+    
+		try {			
+			connect= Conexion.getConexionPostgrest();
+			stm=connect.createStatement();
+			rs=stm.executeQuery(sql);
+			            registrar = true;             
+			stm.close();
+			rs.close();
+			connect.close();
+		} catch (SQLException e) {
+			System.out.println("Error Clase TurnoDao, metodo registrarTurno");
+			e.printStackTrace();
+		}
+     
+         return registrar;
+     
+     
+     }
+    
+    
+    
+    public List<Turno> obtener() {
         Connection co = null;
         Statement stm = null;
         ResultSet rs = null;
-        String sql = "SELECT * FROM especialidad ORDER BY idesp";
-        List<Especialidad> listaEspecialidad = new ArrayList<>();
+        String sql = "SELECT * FROM turno ORDER BY idturno";
+        List<Turno> listaEspecialidad = new ArrayList<>();
         try {
             co = Conexion.getConexionPostgrest();
             stm = co.createStatement();
             rs = stm.executeQuery(sql);
             while (rs.next()) {
-                Especialidad c = new Especialidad();
-                c.setIdesp(rs.getInt(1));
-                c.setEspecialidad(rs.getString(2));
-                c.setEstado(rs.getBoolean(3));
+                Turno c = new Turno();
+                c.setIdturno(rs.getInt(1));
+                c.setHistoriacl(rs.getInt(2));
+                c.setMedico(rs.getString(3));
+                c.setFecha(rs.getDate(4));
+                c.setEstado(rs.getBoolean(5));
                  
                 listaEspecialidad.add(c);
             }
@@ -64,28 +75,30 @@ public class EspecialidadDao {
             rs.close();
             co.close();
         } catch (SQLException e) {
-            System.out.println("Error: Clase EspecialidadDao, método obtener");
+            System.out.println("Error: Clase TurnoDao, método obtener");
         }
 
         return listaEspecialidad;
     }
 
     
-    public List<Especialidad> buscar(String valor) {
+    public List<Turno> buscar(int valor) {
         Connection co = null;
         Statement stm = null;
         ResultSet rs = null;
-        String sql = "SELECT * FROM  especialidad  WHERE especialidad like '%"+valor+"%' or idesp like'%"+valor+"%'  ORDER BY idesp";
-      List<Especialidad> listaEspecialidad = new ArrayList<Especialidad>();
+        String sql = "SELECT * FROM  turno WHERE idturno = "+valor+"";
+      List<Turno> listaEspecialidad = new ArrayList<>();
         try {
             co = Conexion.getConexionPostgrest();
             stm = co.createStatement();
             rs = stm.executeQuery(sql);
             while (rs.next()) {
-                Especialidad c = new Especialidad();
-                c.setIdesp(rs.getInt(1));
-                c.setEspecialidad(rs.getString(2));
-                c.setEstado(rs.getBoolean(3));
+                Turno c = new Turno();
+                c.setIdturno(rs.getInt(1));
+                c.setHistoriacl(rs.getInt(2));
+                c.setMedico(rs.getString(3));
+                c.setFecha(rs.getDate(4));
+                c.setEstado(rs.getBoolean(5));
                  
                 listaEspecialidad.add(c);
             }
@@ -93,12 +106,15 @@ public class EspecialidadDao {
             rs.close();
             co.close();
         } catch (SQLException e) {
-            System.out.println("Error: Clase EspecialidadDa, método buscar");
+            System.out.println("Error: Clase TurnoDao, método buscar");
             e.printStackTrace();
         }
 
         return listaEspecialidad;
     }
+    
+     
+    
     
      public int codigoesp (String valor) {
          Connection connect = null;
@@ -175,32 +191,32 @@ public class EspecialidadDao {
     
     
     
-    public boolean actualizar(Especialidad especialidad) {
+    public boolean actualizar(Turno turno) {
         Connection connect = null;
         Statement stm = null;
 
         boolean actualizar = false;
 
-        String sql = "UPDATE especialidad SET especialidad='" + especialidad.getEspecialidad()+ "', estado='" + especialidad.isEstado() +"' WHERE idesp=" + especialidad.getIdesp();
+        String sql = "UPDATE turno SET historiacl=" + turno.getHistoriacl()+ ", medico='"+turno.getMedico()+"' WHERE idesp=" + turno.getIdturno();
     try {
             connect = Conexion.getConexionPostgrest();
             stm = connect.createStatement();
             stm.execute(sql);
             actualizar = true;
         } catch (SQLException e) {
-            System.out.println("Error: Clase EspecialidadDAO, método actualizar");
+            System.out.println("Error: Clase TurnoDAO, método actualizar");
             e.printStackTrace();
         }
         return actualizar;
     }
 
-    public boolean eliminar(Especialidad especialidad) {
+    public boolean eliminar(Turno turno) {
         Connection connect = null;
         Statement stm = null;
 
         boolean eliminar = false;
 
-        String sql = "DELETE FROM especialidad WHERE idesp=" + especialidad.getIdesp();
+        String sql = "DELETE FROM turno WHERE idturno=" + turno.getIdturno();
         try {
             connect = Conexion.getConexionPostgrest();
             stm = connect.createStatement();
@@ -218,7 +234,7 @@ public class EspecialidadDao {
         Statement stm = null;
         ResultSet rs = null;
         int maximo = 1;
-        String sql = "SELECT max(idesp) FROM especialidad";
+        String sql = "SELECT max(idturno) FROM turno";
         try {
             connect = Conexion.getConexionPostgrest();
             stm = connect.createStatement();
@@ -227,10 +243,11 @@ public class EspecialidadDao {
                 maximo = rs.getInt(1) + 1;
             }
         } catch (Exception e) {
-            System.out.println("Error: Clase EspecialidadDAO, método getMaxID");
+            System.out.println("Error: Clase TurnoDAO, método getMaxID");
             e.printStackTrace();
         }
         return maximo;
     }
+    
     
 }

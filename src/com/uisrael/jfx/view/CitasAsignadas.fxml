@@ -3,38 +3,31 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXComboBox?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="552.0" prefWidth="771.0" style="-fx-background-color: #fff;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="estudiante.view.CitasAsignadasController">
+<AnchorPane id="AnchorPane" fx:id="citasAsignadas" prefHeight="552.0" prefWidth="771.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="estudiante.view.CitasAsignadasController">
    <children>
       <Label layoutX="30.0" layoutY="14.0" text="Citas Asignadas" underline="true">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <JFXComboBox layoutX="69.0" layoutY="57.0" prefHeight="25.0" prefWidth="172.0" promptText="-- Especialidad --" />
+      <JFXComboBox fx:id="cmbEspecialidad" layoutX="69.0" layoutY="57.0" onAction="#buscarComboE" prefHeight="25.0" prefWidth="172.0" promptText="-- Especialidad --" />
       <Label layoutX="115.0" layoutY="87.0" text="Especialidad">
          <font>
             <Font name="Arial" size="12.0" />
          </font>
       </Label>
-      <JFXComboBox layoutX="283.0" layoutY="57.0" prefHeight="25.0" prefWidth="172.0" promptText="-- Médico --" />
+      <JFXComboBox fx:id="cmbMedico" layoutX="283.0" layoutY="57.0" onAction="#buscarComboM" prefHeight="25.0" prefWidth="172.0" promptText="-- Médico --" />
       <Label layoutX="345.0" layoutY="87.0" text="Médico">
          <font>
             <Font name="Arial" size="12.0" />
          </font>
       </Label>
-      <JFXButton layoutX="493.0" layoutY="57.0" text="Buscar" />
-      <TableView layoutX="50.0" layoutY="159.0" prefHeight="375.0" prefWidth="659.0">
-        <columns>
-          <TableColumn prefWidth="75.0" text="C1" />
-          <TableColumn prefWidth="75.0" text="C2" />
-        </columns>
-      </TableView>
-      <JFXButton layoutX="577.0" layoutY="124.0" text="Ver Historia Clinica" />
+      <JFXButton fx:id="btnbuscar" defaultButton="true" layoutX="493.0" layoutY="57.0" onAction="#buscarCita" text="Buscar" />
+      <TableView layoutX="50.0" layoutY="159.0" onSort="#dtTable" prefHeight="375.0" prefWidth="659.0" />
+      <JFXButton fx:id="btnverhcl" defaultButton="true" layoutX="577.0" layoutY="124.0" onAction="#verHcl" text="Ver Historia Clinica" />
    </children>
 </AnchorPane>

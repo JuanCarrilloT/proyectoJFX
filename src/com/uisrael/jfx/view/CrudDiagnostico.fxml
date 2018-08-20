@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="registroDiagnostico" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="com.uisrael.jfx.view.CrudDiagnosticoController">
+    <stylesheets>
+        <URL value="@cruddiagnostico.css" />
+    </stylesheets>
+   <children>
+      <AnchorPane id="AnchorPane" fx:id="registroEspecialidad" layoutX="10.0" layoutY="10.0" prefHeight="414.0" prefWidth="622.0">
+         <children>
+            <Label layoutX="52.0" layoutY="22.0" text="REGISTRO DE DIAGNOSTICOS CIE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="btnguardar" defaultButton="true" layoutX="455.0" layoutY="43.0" onAction="#guardarCie" prefHeight="25.0" prefWidth="76.0" text="Guardar" />
+            <JFXButton fx:id="btnactualizar" defaultButton="true" layoutX="455.0" layoutY="79.0" onAction="#actualizaCie" prefHeight="25.0" prefWidth="76.0" text="Actualizar" />
+            <JFXButton fx:id="btncancelar" cancelButton="true" defaultButton="true" layoutX="455.0" layoutY="149.0" prefHeight="25.0" prefWidth="76.0" text="Cancelar" />
+            <JFXButton fx:id="btneliminar" defaultButton="true" layoutX="455.0" layoutY="115.0" onAction="#eliminaCie" prefHeight="25.0" prefWidth="76.0" text="Eliminar" />
+            <JFXTextField fx:id="txtcie" layoutX="52.0" layoutY="64.0" promptText="Codigo" />
+            <TableView fx:id="dtTable" layoutX="7.0" layoutY="207.0" prefHeight="200.0" prefWidth="600.0" />
+            <JFXTextArea fx:id="txtdescripcion" layoutX="52.0" layoutY="98.0" maxWidth="389.0" minWidth="389.0" prefHeight="59.0" prefWidth="389.0" promptText="Descripcion" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

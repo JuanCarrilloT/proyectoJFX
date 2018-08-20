@@ -56,7 +56,8 @@ public class MedicoDao {
                 c.setIdentificacion(rs.getString(2));
                 c.setNombre(rs.getString(3));
                 c.setApellido(rs.getString(4));
-                c.setEstado(rs.getBoolean(5));
+                c.setEspecialidad(rs.getInt(5));
+                c.setEstado(rs.getBoolean(6));
                 
                  
                 listaMedico.add(c);
@@ -71,7 +72,44 @@ public class MedicoDao {
 
         return listaMedico;
     }
+    
+     public List<Object[]> obtiene() {
+        Connection co = null;
+        Statement stm = null;
+        ResultSet rs = null;
+        String sql = "SELECT a.licencia ,a.nombre, a.apellido,e.especialidad,e.idesp "
+                + "FROM medico a inner join especialidad e on e.idesp = a.especialidad";
+       List<Object[]> listaMedico = new ArrayList<Object[]>();
+        try {
+             
+            co = Conexion.getConexionPostgrest();
+            stm = co.createStatement();
+            rs = stm.executeQuery(sql);
+            while (rs.next()) {
+                listaMedico.add(new Object[]{
+                rs.getString("licencia"),
+                rs.getString("nombre"),
+                rs.getString("apellido"),
+                rs.getString("especialidad"),
+                rs.getInt("idesp")
+              
+                
+                });
+                
+            }
+            stm.close();
+            rs.close();
+            co.close();
+        } catch (SQLException e) {
+            System.out.println("Error: Clase MedicoDao, método obtener");
+            e.printStackTrace();
+        }
 
+        return listaMedico;
+    }
+
+    
+    
     
     public List<Medico> buscar(String valor) {
         Connection co = null;
@@ -114,7 +152,7 @@ public class MedicoDao {
         boolean actualizar = false;
 
         String sql = "UPDATE medico SET identificacion='" + medico.getIdentificacion()+ "', nombre='" + medico.getNombre()+"',apellido = '"+medico.getApellido()+"'"
-                + " especialidad ="+medico.getEspecialidad()+", estado = '"+medico.isEstado()+"' WHERE licencia=" + medico.getLicencia();
+                + " ,especialidad ="+medico.getEspecialidad()+", estado = "+medico.isEstado()+" WHERE licencia= '"+ medico.getLicencia()+"'";
     try {
             connect = Conexion.getConexionPostgrest();
             stm = connect.createStatement();

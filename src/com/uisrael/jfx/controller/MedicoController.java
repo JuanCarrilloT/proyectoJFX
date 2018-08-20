@@ -60,4 +60,10 @@ public class MedicoController {
         return medicodao.obtener();
     }
     
+    public List<Object[]> getLista()
+    {
+        return medicodao.obtiene();
+    }
+    
+    
 }

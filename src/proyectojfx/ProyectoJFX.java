@@ -24,7 +24,7 @@ public class ProyectoJFX extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
-        URL location = getClass().getResource("/com/uisrael/jfx/view/CrudMedicos.fxml");
+        URL location = getClass().getResource("/com/uisrael/jfx/view/AsignarTurno.fxml");
         FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(location);
         fxmlLoader.setBuilderFactory(new JavaFXBuilderFactory());
@@ -32,11 +32,10 @@ public class ProyectoJFX extends Application {
        //Parent root = FXMLLoader.load(getClass().getResource("FXMLLogin.fxml"));
         Parent root = (Parent) fxmlLoader.load(location.openStream());
         Scene scene = new Scene(root);
-        stage.initStyle(StageStyle.TRANSPARENT);
+        //stage.initStyle(StageStyle.TRANSPARENT);
         stage.setScene(scene);
         stage.show();
-           EspecialidadController espe = new EspecialidadController();
-        System.out.println(espe.getListEspecialidad().toString());
+          
         
         
         

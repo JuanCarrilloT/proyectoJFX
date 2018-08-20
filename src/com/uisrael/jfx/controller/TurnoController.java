@@ -6,7 +6,10 @@
 package com.uisrael.jfx.controller;
 
 import com.uisrael.modelo.Dao.EspecialidadDao;
+import com.uisrael.modelo.Dao.MedicoDao;
+import com.uisrael.modelo.Dao.TurnoDao;
 import com.uisrael.modelo.Entidades.Especialidad;
+import com.uisrael.modelo.Entidades.Turno;
 import java.util.List;
 import javafx.collections.ObservableList;
 import javax.swing.JOptionPane;
@@ -15,17 +18,22 @@ import javax.swing.JOptionPane;
  *
  * @author PC
  */
-public class EspecialidadController {
-    
+public class TurnoController {
+  
      public EspecialidadDao especialidaddao;
+     public TurnoDao turnodao;
+     public MedicoDao medicodao;
 
-    public EspecialidadController() {
-        especialidaddao = new EspecialidadDao();
+    public TurnoController() {
+        turnodao = new TurnoDao();
+        especialidaddao=new EspecialidadDao();
+        medicodao = new MedicoDao();
+        
     }
     
     public int codigo(){
-    int idEsp= especialidaddao.getMaxID();
-    return idEsp;
+    int idturno= turnodao.getMaxID();
+    return idturno;
     }
     
     
@@ -33,31 +41,31 @@ public class EspecialidadController {
     String idEsp= especialidaddao.nEspe(valor);
     return idEsp;
     }
-     public boolean insertarEspecialidad (Especialidad nuevo) {
+     public boolean insertarTurno (Turno nuevo) {
         try {
-                 int idEsp= especialidaddao.getMaxID();
-            nuevo.setIdesp(idEsp);     
-           return especialidaddao.registrar(nuevo);
+                 int idturno= turnodao.getMaxID();
+            nuevo.setIdturno(idturno);     
+           return turnodao.registrarTurno(nuevo);
         } catch (Exception e) {
             throw e;
         }
     }
     
-    public boolean actualizarEspecialidad(Especialidad actualizar){
+    public boolean actualizarTurno(Turno actualizar){
         try {
-           return especialidaddao.actualizar(actualizar);
+           return turnodao.actualizar(actualizar);
         } catch (Exception e) {
             throw e;
         }
     
     }
     
-    public void eliminarEspecialidad(Especialidad eliminar)
+    public void eliminarTurno(Turno eliminar)
     {
         try {
-            if(eliminar.getIdesp()!=0)
+            if(eliminar.getIdturno()!=0)
             {
-                especialidaddao.eliminar(eliminar);
+                turnodao.eliminar(eliminar);
             }
             else
             {
@@ -68,9 +76,9 @@ public class EspecialidadController {
         }
            
     }
-    public List<Especialidad> getListEspecialidad()
+    public List<Turno> getListEspecialidad()
     {
-        return especialidaddao.obtener();
+        return turnodao.obtener();
     }
     
    public int codigoespe(String valor){
@@ -82,4 +90,5 @@ public class EspecialidadController {
     {
         return especialidaddao.getListEspecialidad();
     }
+    
 }
